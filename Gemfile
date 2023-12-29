@@ -71,3 +71,7 @@ end
 group :production do
   gem 'pg', '~> 1.5', '>= 1.5.4'
 end
+
+gem "cssbundling-rails", "~> 1.3"
+
+gem "jsbundling-rails", "~> 1.2"
