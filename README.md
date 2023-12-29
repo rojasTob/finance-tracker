@@ -5,7 +5,7 @@ Finance tracker app
 Install
 
 ```
-bundle install
+bundle install --without production
 ```
 
 Run
