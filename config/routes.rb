@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "welcome#index"
+  get "my_portafolio", to: "users#my_portafolio"
+  get "search_stock", to: "stocks#search"
 end
