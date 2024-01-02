@@ -3,6 +3,7 @@ class StocksController < ApplicationController
   def search
     if params[:stock].present?
       @stock = Stock.new_lookup(params[:stock])
+      @tracked_stocks = current_user.stocks
 
       if @stock
         # Try again to render only the part that needs to be updated with ajax: create a js template!!

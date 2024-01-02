@@ -15,9 +15,11 @@
   <% end %>
 </div>
 <br/>
-<%= render 'users/result' %>
+<div class="mb-2">
+  <%= render 'users/result' %>
+</div>
 
-<% if !@tracked_stocks.empty? %>
+<% if !@tracked_stocks.blank? and !@tracked_stocks.empty? %>
   <%= render 'stocks/list' %>
 <% end %>
 
