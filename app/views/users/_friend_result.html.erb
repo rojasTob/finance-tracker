@@ -7,13 +7,17 @@
           <th scope="col">Actions</th>
         </thead>
         <tbody>
-          <% @friends.each do |friend| %>
+          <% @friends_search.each do |friend| %>
             <tr>
               <td><%= friend.full_name %></td>
               <td><%= friend.email %></td>
               <td>
                 <%= link_to 'View profile', '#', class: 'btn btn-sm btn-success' %>
-                <%= link_to 'Stop Following', '#', method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-sm btn-success' %>
+                <%if current_user.not_friends_with?(friend.id)%>
+                  <%= link_to 'Follow friend?', '#', class: 'btn btn-sm btn-success' %>
+                <%else%>
+                  <span class='badge bg-secondary'>You are friends</span>
+                <%end%>
               </td>
             </tr>
           <% end %>
