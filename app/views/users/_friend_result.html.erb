@@ -1,0 +1,23 @@
+<% if @friends_search %>
+  <div class="card card-header mt-2 card-inline">
+    <table class="table table-bordered table-hover">
+        <thead>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </thead>
+        <tbody>
+          <% @friends.each do |friend| %>
+            <tr>
+              <td><%= friend.full_name %></td>
+              <td><%= friend.email %></td>
+              <td>
+                <%= link_to 'View profile', '#', class: 'btn btn-sm btn-success' %>
+                <%= link_to 'Stop Following', '#', method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-sm btn-success' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+<% end %>
