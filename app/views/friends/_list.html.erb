@@ -14,6 +14,7 @@
           <td><%= friend.full_name %></td>
           <td><%= friend.email %></td>
           <td>
+            <%= link_to 'View profile', user_path(friend), class: 'btn btn-sm btn-success' %>
             <%= link_to 'Unfollow', friendship_path(friend), data: {"turbo-method": :delete , "turbo-confirm": "Are you sure?"}, class: "btn btn-sm btn-warning" %>
           </td>
         </tr>

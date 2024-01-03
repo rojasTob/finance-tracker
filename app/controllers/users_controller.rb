@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def my_portafolio
+    @user = current_user
     @tracked_stocks = current_user.stocks
   end
 
@@ -24,6 +25,11 @@ class UsersController < ApplicationController
       flash[:alert] = "Please enter a friend name or email to search"
       redirect_to my_friends_path
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @tracked_stocks = @user.stocks
   end
 
 end
